@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>يوم المعلم العالمي | بوابة التقدير</title>
+    
+    <!-- خط Tajawal و FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0f4c81;
+            --secondary-color: #1a6b9c;
+            --accent-color: #d4af37;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-sub: #607d8b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 16px;
+        }
+
+        .main-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            padding: 32px 24px 20px 24px;
+            width: 100%;
+            max-width: 550px;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            border-radius: 20px 20px 0 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .date-badge {
+            display: inline-block;
+            background-color: #f0f7fc;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        /* تنسيق الشريط المتحرك باللون الأسود */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-right: 4px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 10px 0;
+            margin-bottom: 24px;
+            white-space: nowrap;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            padding-right: 100%;
+            animation: marquee 25s linear infinite;
+            font-size: 0.92rem;
+            color: #000000; /* تغيير النص كاملاً إلى اللون الأسود */
+            font-weight: 600;
+        }
+
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                transform: translate3d(100%, 0, 0);
+            }
+        }
+
+        .quote-highlight {
+            font-weight: 800;
+            color: #000000; /* اقتباس باللون الأسود الداكن */
+            margin-right: 4px;
+        }
+
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .action-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            border: 2px solid #eef2f6;
+            padding: 16px 20px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .action-card:hover, .action-card:active {
+            transform: translateY(-2px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 8px 20px rgba(15, 76, 129, 0.12);
+        }
+
+        .card-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .icon-box {
+            width: 46px;
+            height: 46px;
+            background-color: #f0f7fc;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            transition: all 0.25s ease;
+        }
+
+        .action-card:hover .icon-box {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .text-info {
+            text-align: right;
+        }
+
+        .text-info .title {
+            font-weight: 700;
+            font-size: 1rem;
+            display: block;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+
+        .text-info .desc {
+            font-size: 0.82rem;
+            color: var(--text-sub);
+            line-height: 1.3;
+        }
+
+        .arrow-box {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b0bec5;
+            flex-shrink: 0;
+            transition: all 0.25s ease;
+        }
+
+        .action-card:hover .arrow-box {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            transform: translateX(-4px);
+        }
+
+        /* الحقوق والتصميم */
+        .footer-credits {
+            margin-top: 10px;
+            padding-top: 14px;
+            border-top: 1px solid #f0f4f8;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            font-weight: 600;
+        }
+
+        .footer-credits span {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        @media (max-width: 380px) {
+            .main-card {
+                padding: 24px 16px 16px 16px;
+            }
+            .action-card {
+                padding: 12px 14px;
+            }
+            .icon-box {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            .text-info .title {
+                font-size: 0.92rem;
+            }
+            .text-info .desc {
+                font-size: 0.78rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="main-card">
+        <div class="date-badge">
+            <i class="fa-regular fa-calendar-check"></i> الخامس من أكتوبر
+        </div>
+
+        <h1>يوم المعلم العالمي</h1>
+
+        <!-- الشريط المتحرك النصي باللون الأسود -->
+        <div class="marquee-container">
+            <div class="marquee-content">
+                يوم المعلم هو يوم يُحتفل به في السعودية في الخامس من أكتوبر من كل عام، ويُعتبر مناسبة للتعبير عن الشكر والتقدير للمعلمين. يُحتفل به من قبل الطلاب والمعلمين في جميع المؤسسات التعليمية، حيث يتم تنظيم فعاليات واحتفالات تبرز دور المعلم في بناء المجتمع. من بين العبارات الشائعة التي تُقال في هذا اليوم: <span class="quote-highlight">"المعلّم هو الرّوح التي بها يستمدّ المجتمع قوّته"</span>
+            </div>
+        </div>
+
+        <div class="links-wrapper">
+            <!-- الأيقونة الأولى: جدار الشكر والتقدير لمعلمي -->
+            <a href="https://amars57205.github.io/Grateful-to-the-teacher/" target="_blank" rel="noopener" class="action-card">
+                <div class="card-left">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div class="text-info">
+                        <span class="title">جدار الشكر والتقدير لمعلمي</span>
+                        <span class="desc">يوم المعلم العالمي | شهادة وشكر لمعلمي</span>
+                    </div>
+                </div>
+                <div class="arrow-box">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+            </a>
+
+            <!-- الأيقونة الثانية: شهادة شكر وتقدير للمعلم -->
+            <a href="https://amars57205.github.io/Thanks-to-the-teacher/" target="_blank" rel="noopener" class="action-card">
+                <div class="card-left">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="text-info">
+                        <span class="title">شهادة شكر وتقدير للمعلم</span>
+                        <span class="desc">يوم المعلم العالمي | شهادة شكر وتقدير</span>
+                    </div>
+                </div>
+                <div class="arrow-box">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- حقوق التصميم والبرمجة -->
+        <div class="footer-credits">
+            تصميم وبرمجة: <span>أ. صلاح الرحيمان</span>
+        </div>
+    </main>
+
+</body>
+</html>
