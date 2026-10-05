@@ -41,7 +41,7 @@
             background: var(--card-bg);
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            padding: 32px 24px 20px 24px;
+            padding: 28px 24px 20px 24px;
             width: 100%;
             max-width: 550px;
             text-align: center;
@@ -58,6 +58,21 @@
             height: 5px;
             border-radius: 20px 20px 0 0;
             background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        /* تنسيق الشعار */
+        .logo-container {
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-img {
+            max-width: 180px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.08));
         }
 
         .date-badge {
@@ -99,7 +114,7 @@
             padding-right: 100%;
             animation: marquee 25s linear infinite;
             font-size: 0.92rem;
-            color: #000000; /* تغيير النص كاملاً إلى اللون الأسود */
+            color: #000000;
             font-weight: 600;
         }
 
@@ -118,7 +133,7 @@
 
         .quote-highlight {
             font-weight: 800;
-            color: #000000; /* اقتباس باللون الأسود الداكن */
+            color: #000000;
             margin-right: 4px;
         }
 
@@ -230,6 +245,9 @@
             .main-card {
                 padding: 24px 16px 16px 16px;
             }
+            .logo-img {
+                max-width: 150px;
+            }
             .action-card {
                 padding: 12px 14px;
             }
@@ -250,6 +268,11 @@
 <body>
 
     <main class="main-card">
+        <!-- الشعار المضاف من رابط Google Drive -->
+        <div class="logo-container">
+            <img src="https://lh3.googleusercontent.com/d/1dNGgwCk04ZBDoXlWZ_CgzV2wRDwVQemi" alt="شعار يوم المعلم" class="logo-img">
+        </div>
+
         <div class="date-badge">
             <i class="fa-regular fa-calendar-check"></i> الخامس من أكتوبر
         </div>
